@@ -1764,6 +1764,7 @@ List.ATTRS{
     row_height = 1,
     scroll_keys = STANDARDSCROLL,
     icon_width = DEFAULT_NIL,
+    buffer_selection = true
 }
 
 function List:init(info)
@@ -1897,7 +1898,7 @@ function List:moveCursor(delta, force_cb)
         end
     end
 
-    local buffer = 1 + math.min(4, math.floor(self.page_size/10))
+    local buffer = self.buffer_selection and (1 + math.min(4, math.floor(self.page_size/10))) or 0
 
     self.selected = 1 + off % cnt
     if (self.selected - buffer) < self.page_top then
