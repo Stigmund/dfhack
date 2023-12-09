@@ -5344,6 +5344,8 @@ It has the following attributes:
 :icon_width: If not *nil*, the specified number of character columns
              are reserved to the left of the list item for the icons.
 :scroll_keys: Specifies which keys the list should react to as a table.
+:buffer_selection: Specifies whether or not to auto scroll new elements into view when
+                   selecting first or last elements (defauts to true).
 
 Every list item may be specified either as a string, or as a lua table
 with the following fields:
